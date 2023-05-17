@@ -24,7 +24,11 @@ class MainActivity : AppCompatActivity() {
                 DetailActivity.getIntent(this, it.second),
                 ActivityOptions.makeSceneTransitionAnimation(
                     this,
-                    android.util.Pair(it.first, it.first.transitionName)
+                    android.util.Pair(it.first.imageView, it.first.imageView.transitionName),
+                    android.util.Pair(it.first.view, it.first.view.transitionName),
+                    android.util.Pair(it.first.tvTitle, it.first.tvTitle.transitionName),
+                    android.util.Pair(it.first.tvSubTitle, it.first.tvSubTitle.transitionName),
+                    android.util.Pair(it.first.tvDesc, it.first.tvDesc.transitionName),
                 ).toBundle()
             )
         }

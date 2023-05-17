@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.animations.databinding.ItemPagerBinding
 import com.bumptech.glide.Glide
 
-class PagerAdapter(var list: ArrayList<String>,val onItemClick:(Pair<View,String>)->Unit) :
+class PagerAdapter(var list: ArrayList<String>,val onItemClick:(Pair<ItemPagerBinding,String>)->Unit) :
     RecyclerView.Adapter<PagerAdapter.PagerViewHolder>() {
 
      fun  updateData(list: ArrayList<String>) {
@@ -34,7 +34,7 @@ class PagerAdapter(var list: ArrayList<String>,val onItemClick:(Pair<View,String
         fun bind(url: String) {
             Glide.with(binding.root.context).load(url).into(binding.imageView)
             binding.imageView.setOnClickListener {
-                onItemClick(Pair(binding.imageView,url))
+                onItemClick(Pair(binding,url))
             }
         }
     }
